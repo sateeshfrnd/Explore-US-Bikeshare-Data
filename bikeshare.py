@@ -54,6 +54,22 @@ def getDayOfWeek():
         break
     return day.lower()
 
+def display_raw_data(df):
+    """Display the raw data upon request by user that to compute the Statistics"""
+    rasw_df = df.drop(['month', 'day_of_week', 'hour'], axis=1)
+    index = 0
+    display_record_count = 5
+
+    view_data = input('\nWould you like to view the data that to compute the stats? Enter yes or no.\n')
+    while True:
+        if view_data.lower() == 'no':
+            return
+        if view_data.lower() == 'yes':
+            print(df[index: index + display_record_count])
+            index = index + display_record_count
+
+        view_data = input('\nWould you like to view 5 more records of the data that to compute the stats? Enter yes or no.\n')
+
 def get_filters():
     """
     Asks user to specify a city, month, and day to analyze.
@@ -239,6 +255,7 @@ def main():
         city, month, day = get_filters()
         df = load_data(city, month, day)
 
+        display_raw_data(df)
         time_stats(df)
         station_stats(df)
         trip_duration_stats(df)
