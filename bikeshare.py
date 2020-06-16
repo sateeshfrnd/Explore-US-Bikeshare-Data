@@ -201,13 +201,34 @@ def user_stats(df):
     start_time = time.time()
 
     # Display counts of user types
-
+    user_type_counts = df.groupby('User Type')['User Type'].count()
+    print('User Type count are :')
+    print('-' * len('User Type count are :'))
+    print(user_type_counts.to_string())
 
     # Display counts of gender
-
+    print()
+    try:
+        gender_counts = df.groupby('Gender')['Gender'].count()
+        print('Gender Count are :')
+        print('-' * len('Gender Count are :'))
+        print(gender_counts.to_string())
+    except:
+        print('There is no "Gender" column in data.')
 
     # Display earliest, most recent, and most common year of birth
+    print()
+    try:
+        earliest_year = df['Birth Year'].min()
+        print('\nEarliest year of birth : {}'.format(earliest_year))
 
+        most_recent_year = df['Birth Year'].max()
+        print('Most recent year of birth : {}'.format(most_recent_year))
+
+        most_common_year = df['Birth Year'].mode()[0]
+        print('Most common year of birth : {}'.format(most_common_year))
+    except:
+        print('There is no "Birth Year" column in data.')
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
