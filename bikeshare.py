@@ -158,13 +158,18 @@ def station_stats(df):
     start_time = time.time()
 
     # display most commonly used start station
-
+    most_used_start_station = df[['Start Station']].groupby(['Start Station']).size().nlargest(1)
+    print('Most commonly used start station is "{}"'.format(most_used_start_station.index[0]))
 
     # display most commonly used end station
-
+    most_used_end_station = df[['End Station']].groupby(['End Station']).size().nlargest(1)
+    print('Most commonly used end station is "{}"'.format(most_used_end_station.index[0]))
 
     # display most frequent combination of start station and end station trip
-
+    most_used_start_end_station = df[['Start Station', 'End Station']].groupby(
+        ['Start Station', 'End Station']).size().nlargest(1)
+    print('The most frequent combination of start station and end station trip is "{}" and "{}"'.format(
+        most_used_start_end_station.index[0][0], most_used_start_end_station.index[0][1]))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
