@@ -47,6 +47,12 @@ Code is written to calculate the following information:
    - counts of each gender (only available for NYC and Chicago)
    - earliest, most recent, most common year of birth (only available for NYC and Chicago)
 
+### Program Details
+The program written in Python 3 and it will takes the input for the city (e.g. Chicago), month for which the you want to view data (e.g. January ~ June and also includes an option 'all'), and day for which the you wants to view data (e.g. Sunday ~ Saturday also includes an option 'all').
+
+### Additional Modules used : 
+- [Pandas](https://pandas.pydata.org/)
+- [time](https://docs.python.org/2/library/time.html)
 
 ### Credits
 While doing the project, I refer the API documentations and code snippets from different blogs,forums like [Stackoverflow](https://stackoverflow.com/) and [GreeksforGreeks](https://www.geeksforgeeks.org).
