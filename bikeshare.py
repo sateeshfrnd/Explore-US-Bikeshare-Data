@@ -1,3 +1,12 @@
+#===================================================================================================================================================
+# File name         : bikeshare.py
+# Author            : Satish Kumar
+# Python Version    : 3.7.1
+# Date created      : 6/16/2020
+# Description       : This is a part of Udacity Nanodegree Program that to explore the US Bikeshare Data to
+#                     calculate statistics and build an interactive environment where a user choose the data and filter for a dataset to analyse.
+#===================================================================================================================================================
+
 import time
 import pandas as pd
 import numpy as np
