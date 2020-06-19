@@ -26,7 +26,7 @@ This project focuses on usage of Python's modules- Pandas and Numpy.Calculate st
    - Birth Year
    
 ### Calculate Statistics
-Code is written to calculate the following information:
+Code is written to calculate the following stats details:
 
 1. Popular times of travel (i.e., occurs most often in the start time)
    - most common month
