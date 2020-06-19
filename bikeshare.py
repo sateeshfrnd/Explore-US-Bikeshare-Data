@@ -25,28 +25,28 @@ def getCity():
         (str) city - name of the city to analyze
     """
     while True :
-        city = input('Would you like to see data for chicago, new york city, washington ?')
-        if(city.lower() not in CITY_DATA):
+        city = input('Would you like to see data for chicago, new york city, washington ?').lower()
+        if(city not in CITY_DATA):
             print('You did not enter a valid City, valid cities are {}. Let\'s try again.'.format(list(CITY_DATA.keys())))
             continue
         break
-    return city.lower()
+    return city
 
 
 def getMonth():
     """
-    Asks user to specify a monthto analyze.
+    Asks user to specify a month to analyze.
 
     Returns:
         (str) month - name of the month to filter by, or "all" to apply no month filter
     """
     while True :
-        month = input('Which month - January, February, March, April, May, June or All?')
-        if(month.lower() not in MONTHS):
+        month = input('Which month - January, February, March, April, May, June or All?').lower()
+        if(month not in MONTHS):
             print('You did not enter a valid Month.valid months are {}. Let\'s try again.'.format(MONTHS))
             continue
         break
-    return month.lower()
+    return month
 
 def getDayOfWeek():
     """
@@ -56,12 +56,12 @@ def getDayOfWeek():
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
     while True :
-        day = input('Which day? (all, monday, tuesday, ... sunday)')
-        if(day.lower() not in DAYS):
+        day = input('Which day? (all, monday, tuesday, ... sunday)').lower()
+        if(day not in DAYS):
             print('You did not enter a valid Day.valid day {}. Let\'s try again.'.format(DAYS))
             continue
         break
-    return day.lower()
+    return day
 
 def display_raw_data(df):
     """Display the raw data upon request by user that to compute the Statistics"""
@@ -69,11 +69,11 @@ def display_raw_data(df):
     index = 0
     display_record_count = 5
 
-    view_data = input('\nWould you like to view the data that to compute the stats? Enter yes or no.\n')
+    view_data = input('\nWould you like to view the data that to compute the stats? Enter yes or no.\n').lower()
     while True:
-        if view_data.lower() == 'no':
+        if view_data == 'no':
             return
-        if view_data.lower() == 'yes':
+        if view_data == 'yes':
             print(df[index: index + display_record_count])
             index = index + display_record_count
 
